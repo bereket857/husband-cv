@@ -1,0 +1,527 @@
+[8/27/2026 7:17 AM] Bereket: <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Application for the Position of Husband 💍</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffe4ec, #f7d9ff);
+      color: #333;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    header {
+      text-align: center;
+      padding: 45px 25px;
+      background: linear-gradient(135deg, #ff4f81, #9c4dcc);
+      color: white;
+    }
+
+    .ring {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .content {
+      padding: 35px;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 35px;
+    }
+
+    .detail {
+      background: #fff3f7;
+      padding: 18px;
+      border-radius: 14px;
+      border-left: 4px solid #ff4f81;
+    }
+
+    .detail strong {
+      display: block;
+      color: #9c4dcc;
+      margin-bottom: 5px;
+    }
+
+    section {
+      margin-bottom: 35px;
+    }
+
+    section h2 {
+      color: #d6336c;
+      margin-bottom: 18px;
+      font-size: 24px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      background: #fafafa;
+      margin: 10px 0;
+      padding: 14px 16px;
+      border-radius: 12px;
+      transition: 0.25s;
+    }
+
+    li:hover {
+      transform: translateX(6px);
+      background: #fff0f5;
+    }
+
+    li::before {
+      content: "❤️";
+      margin-right: 10px;
+    }
+
+    .objective {
+      background: linear-gradient(135deg, #fff0f5, #f5eaff);
+      padding: 25px;
+      border-radius: 18px;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .references {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .reference {
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 15px;
+    }
+
+    .salary {
+      text-align: center;
+      margin-top: 25px;
+      padding: 25px;
+      border-radius: 18px;
+      background: #ffedf3;
+    }
+
+    .salary h2 {
+      margin-bottom: 10px;
+    }
+
+    .salary p {
+      font-size: 20px;
+      font-weight: bold;
+      color: #d6336c;
+    }
+
+    /* Accept Button */
+    .accept-btn {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: 35px auto 10px;
+      padding: 17px 30px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #ff4f81, #d6336c);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(214, 51, 108, 0.3);
+      transition: 0.3s;
+    }
+
+    .accept-btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 12px 25px rgba(214, 51, 108, 0.4);
+    }
+
+    .accept-btn:active {
+      transform: scale(0.97);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+      font-size: 14px;
+    }
+
+    /* Congratulations popup */
+    .popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .popup-box {
+      width: 100%;
+      max-width: 500px;
+      background: white;
+      border-radius: 25px;
+      padding: 40px 25px;
+      text-align: center;
+      animation: popup 0.4s ease;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .popup-heart {
+      font-size: 65px;
+      animation: heartbeat 1s infinite;
+    }
+
+    .popup-box h2 {
+      color: #d6336c;
+      font-size: 28px;
+      margin: 15px 0;
+    }
+[8/27/2026 7:17 AM] Bereket: .popup-box p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .close-btn {
+      margin-top: 25px;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      background: #d6336c;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @keyframes popup {
+      from {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+
+      header {
+        padding: 35px 18px;
+      }
+
+      header h1 {
+        font-size: 25px;
+      }
+
+      .content {
+        padding: 22px;
+      }
+
+      .details,
+      .references {
+        grid-template-columns: 1fr;
+      }
+
+      .salary p {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <div class="ring">💍</div>
+
+      <h1>APPLICATION FOR THE POSITION OF HUSBAND</h1>
+
+      <p>
+        Official Relationship Recruitment Department ❤️
+      </p>
+    </header>
+
+
+    <main class="content">
+
+      <!-- Basic Information -->
+      <div class="details">
+
+        <div class="detail">
+          <strong>Position Applied For</strong>
+          Husband
+        </div>
+
+        <div class="detail">
+          <strong>Department</strong>
+          Love & Family ❤️
+        </div>
+
+        <div class="detail">
+          <strong>Employment Type</strong>
+          Full-Time
+        </div>
+
+        <div class="detail">
+          <strong>Availability</strong>
+          Immediately
+        </div>
+
+        <div class="detail">
+          <strong>Contract</strong>
+          Lifetime ♾️
+        </div>
+
+        <div class="detail">
+          <strong>Experience</strong>
+          Ready to learn 😌
+        </div>
+
+      </div>
+
+
+      <!-- Qualifications -->
+      <section>
+
+        <h2>🎓 Qualifications</h2>
+
+        <ul>
+          <li>Loyal, trustworthy, and respectful ❤️</li>
+
+          <li>
+            Excellent communication skills
+          </li>
+
+          <li>
+            Willing to listen—even when I'm convinced I'm right 😂
+          </li>
+
+          <li>
+            Strong teamwork and problem-solving abilities
+          </li>
+
+          <li>
+            Emotionally supportive
+          </li>
+
+          <li>
+            Serious about long-term commitment
+          </li>
+
+          <li>
+            Willing to share food… under reasonable conditions 🍕😂
+          </li>
+        </ul>
+
+      </section>
+
+
+      <!-- Professional Skills -->
+      <section>
+
+        <h2>💼 Professional Skills</h2>
+
+        <ul>
+          <li>Making my partner laugh</li>
+
+          <li>
+            Remembering birthdays and important dates 📅
+          </li>
+
+          <li>
+            Saying "Yes, my love" with confidence
+          </li>
+
+          <li>
+            Giving hugs whenever required 🤗
+          </li>
+
+          <li>
+            Providing emotional support
+          </li>
+
+          <li>
+            Surviving shopping trips with patience 🛍️😂
+          </li>
+
+          <li>
+            Saying "I'm fine" while clearly knowing I'm not 😭
+          </li>
+        </ul>
+
+      </section>
+
+
+      <!-- Career Objective -->
+      <section>
+
+        <h2>🎯 Career Objective</h2>
+
+        <div class="objective">
+
+          To build a peaceful, loving, and lifelong partnership
+          with the right person, while continuously developing my
+          skills as a loving, supportive, and slightly annoying
+          husband. 😂❤️
+
+        </div>
+
+      </section>
+
+
+      <!-- References -->
+      <section>
+
+        <h2>📞 References</h2>
+
+        <div class="references">
+
+          <div class="reference">
+            <strong>My Mother</strong>
+            <p>Says I'm a very good boy. 😌</p>
+          </div>
+            <div class="reference">
+            <strong>My Friends</strong>
+            <p>Still investigating. 😂</p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- Expected Salary -->
+      <div class="salary">
+
+        <h2>💰 Expected Salary</h2>
+
+        <p>
+          Love, loyalty, peace, good food, and unlimited hugs. ❤️
+        </p>
+
+      </div>
+
+
+      <!-- Accept Button -->
+      <button class="accept-btn" onclick="acceptHusband()">
+        💍 Accept
+      </button>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+      © 2026 Husband Recruitment Agency • Applications are forever ❤️
+    </footer>
+
+  </div>
+
+
+  <!-- Congratulations Popup -->
+  <div class="popup" id="successPopup">
+
+    <div class="popup-box">
+
+      <div class="popup-heart">
+        💍😂
+      </div>
+
+      <h2>🎉 CONGRATULATIONS! 🎉</h2>
+
+      <p>
+        You chose the best husband in the world! 😂💍
+        <br><br>
+        Thank you for accepting my application. 😌😂
+      </p>
+
+      <button class="close-btn" onclick="closePopup()">
+        ❤️ Okay
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function acceptHusband() {
+
+      document.getElementById("successPopup").style.display = "flex";
+
+      // Small celebration
+      document.body.style.overflow = "hidden";
+
+    }
+
+
+    function closePopup() {
+
+      document.getElementById("successPopup").style.display = "none";
+
+      document.body.style.overflow = "auto";
+
+    }
+
+  </script>
+
+</body>
+</html>
